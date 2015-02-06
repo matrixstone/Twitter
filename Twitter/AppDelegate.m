@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "TwitterClient.h"
+#import "User.h"
+#import "Tweet.h"
 
 @interface AppDelegate ()
 
@@ -46,6 +49,37 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    [[TwitterClient sharedInstance] fetchAccessTokenWithPath:@"oauth/access_token" method:@"POST" requestToken:[BDBOAuth1Credential credentialWithQueryString:url.query] success:^(BDBOAuth1Credential *accessToken) {
+        NSLog(@"got the access token");
+        [[TwitterClient sharedInstance].requestSerializer saveAccessToken:accessToken];
+        
+        [[TwitterClient sharedInstance] GET:@"/1.1/account/verify_credentials.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//            NSLog(@"current user: %@", responseObject);
+            User *user=[[User alloc]initWithDictionary:responseObject];
+            NSLog(@" User Name: %@", user.name);
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error with sharedInstance GET");
+        }];
+        
+        [[TwitterClient sharedInstance] GET:@"/1.1/statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"home line : %@", responseObject);
+            User *user=[[User alloc]initWithDictionary:responseObject];
+//            NSLog(@" User Name: %@", user.name);
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error with sharedInstance GET");
+        }];
+        
+        
+    } failure:^(NSError *error) {
+        NSLog(@"fail to get the access token");
+    }];
+    
+    return true;
 }
 
 @end

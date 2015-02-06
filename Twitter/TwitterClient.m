@@ -10,7 +10,7 @@
 
 NSString * const kTwitterConsumerKey=@"hJYMmIYKySqwwc5yybWkL2UMq";
 NSString * const kTwitterConsumerSecret=@"04rJiMgjfu7hFK5aeAycpH6usIUSILQdahmsb0S3s164llTa5V";
-NSString * const kTwitterBaseUrl=@"http://api.twitter.com";
+NSString * const kTwitterBaseUrl=@"https://api.twitter.com/";
 
 @implementation TwitterClient
 
@@ -20,7 +20,7 @@ NSString * const kTwitterBaseUrl=@"http://api.twitter.com";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if(instance == nil) {
-            instance=[[TwitterClient alloc]initWithBaseURL:[NSURL URLWithString:kTwitterBaseUrl] consumerKey:kTwitterConsumerKey consumerSecret:kTwitterConsumerSecret];
+            instance=[[TwitterClient alloc] initWithBaseURL:[NSURL URLWithString:kTwitterBaseUrl] consumerKey:kTwitterConsumerKey consumerSecret:kTwitterConsumerSecret];
         }
     });
     
