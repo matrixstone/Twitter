@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "TwitterClient.h"
+#import "TweetsViewController.h"
 
 @interface LoginViewController ()
 @property (nonatomic) BDBOAuth1RequestOperationManager *networkManager;
@@ -17,23 +18,21 @@
 @implementation LoginViewController
 
 - (IBAction)onLogin:(id)sender {
-    [[TwitterClient sharedInstance].requestSerializer removeAccessToken];
-    
-    [[TwitterClient sharedInstance] fetchRequestTokenWithPath:@"/oauth/request_token"
-                                            method:@"GET"
-                                       callbackURL:[NSURL URLWithString:@"cptwitterdemo://oauth"]
-                                             scope:nil
-                                           success:^(BDBOAuth1Credential *requestToken) {
-                                               NSURL *authURL=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.twitter.com/oauth/authorize?oauth_token=%@", requestToken.token]];
-                                               [[UIApplication sharedApplication] openURL:authURL];
-
-                                           }
-                                           failure:^(NSError *error) {
-                                                NSLog(@"%@", error);
-                                                NSLog(@"Failed to get the request token!");
-                                       
-                                           }];
-
+    [[TwitterClient sharedInstance] loginWithCompletion:^(User *user, NSError *error) {
+        if (user != nil) {
+            //Modally present tweets view
+            NSLog(@"Welcome to %@", user.name);
+            
+            //Set navigationController
+            UINavigationController *nvc =[[UINavigationController alloc] initWithRootViewController:[[TweetsViewController alloc] init]];
+            nvc.navigationBar.translucent=NO;
+            [self presentViewController:nvc animated:YES completion:nil];
+            
+        }else{
+            //print view controel
+            NSLog(@"Fail at LoginViewController ");
+        }
+    }];
 }
 
 - (void)viewDidLoad {

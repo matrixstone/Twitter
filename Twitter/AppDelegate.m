@@ -11,6 +11,8 @@
 #import "TwitterClient.h"
 #import "User.h"
 #import "Tweet.h"
+#import "TweetsViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -23,10 +25,31 @@
     // Override point for customization after application launch.
     self.window=[[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     
-    self.window.rootViewController=[[LoginViewController alloc]init];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogout) name:UserDidLogoutNotification object:nil];
+    
+    User *user= [User currentUser];
+    if( user != nil){
+        NSLog(@"Welcome from AppDelegate: %@", user.name);
+        UINavigationController *nvc =[[UINavigationController alloc] initWithRootViewController:[[TweetsViewController alloc] init]];
+        nvc.navigationBar.translucent=NO;
+        self.window.rootViewController=nvc;
+        //        self.window.backgroundColor = [UIColor whiteColor];
+        [self.window makeKeyAndVisible];
+        
+        self.window.rootViewController=nvc;
+    }else{
+        NSLog(@"Not logged in ");
+        self.window.rootViewController=[[LoginViewController alloc]init];
+    }
+    
     
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)userDidLogout{
+    NSLog(@"Log in");
+    self.window.rootViewController=[[LoginViewController alloc]init];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -52,33 +75,8 @@
 }
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    [[TwitterClient sharedInstance] fetchAccessTokenWithPath:@"oauth/access_token" method:@"POST" requestToken:[BDBOAuth1Credential credentialWithQueryString:url.query] success:^(BDBOAuth1Credential *accessToken) {
-        NSLog(@"got the access token");
-        [[TwitterClient sharedInstance].requestSerializer saveAccessToken:accessToken];
+    [[TwitterClient sharedInstance] openURL:url];
         
-        [[TwitterClient sharedInstance] GET:@"/1.1/account/verify_credentials.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            NSLog(@"current user: %@", responseObject);
-            User *user=[[User alloc]initWithDictionary:responseObject];
-            NSLog(@" User Name: %@", user.name);
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error with sharedInstance GET");
-        }];
-        
-        [[TwitterClient sharedInstance] GET:@"/1.1/statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"home line : %@", responseObject);
-            User *user=[[User alloc]initWithDictionary:responseObject];
-//            NSLog(@" User Name: %@", user.name);
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error with sharedInstance GET");
-        }];
-        
-        
-    } failure:^(NSError *error) {
-        NSLog(@"fail to get the access token");
-    }];
-    
     return true;
 }
 
