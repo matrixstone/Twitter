@@ -18,4 +18,5 @@
 
 -(void)homeTimelineWithParams:(NSDictionary *)params completion:(void (^)(NSArray *tweets, NSError *error))completion;
 
+-(void)postTweet:(NSString *)content withUser:(User *)user;
 @end

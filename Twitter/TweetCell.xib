@@ -19,8 +19,20 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="MJ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGI-Ww-hbT">
+                        <rect key="frame" x="168" y="20" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Text file" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOT-if-DSb">
+                        <rect key="frame" x="72" y="49" width="254" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmF-gd-PBh">
-                        <rect key="frame" x="14" y="19" width="50" height="50"/>
+                        <rect key="frame" x="14" y="17" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="R5N-qL-sAb"/>
                             <constraint firstAttribute="width" constant="80" id="WF2-bB-zYT"/>
@@ -34,28 +46,18 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Text file" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOT-if-DSb">
-                        <rect key="frame" x="72" y="43" width="322" height="42"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="MJ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGI-Ww-hbT">
-                        <rect key="frame" x="168" y="20" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="kmF-gd-PBh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="5aY-Dn-DZI"/>
                     <constraint firstAttribute="bottom" secondItem="kmF-gd-PBh" secondAttribute="bottom" constant="13" id="8TE-lC-gqe"/>
                     <constraint firstItem="kmF-gd-PBh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="AtE-5C-c9c"/>
-                    <constraint firstItem="YbU-Eo-kc5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="EbO-05-WI4"/>
+                    <constraint firstItem="ZOT-if-DSb" firstAttribute="top" secondItem="RGI-Ww-hbT" secondAttribute="bottom" constant="8" id="EZF-db-pEj"/>
+                    <constraint firstItem="YbU-Eo-kc5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="EbO-05-WI4"/>
                     <constraint firstItem="RGI-Ww-hbT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YbU-Eo-kc5" secondAttribute="trailing" constant="55" id="IlY-xJ-LPg"/>
                     <constraint firstItem="kmF-gd-PBh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="Jtf-GL-76A"/>
-                    <constraint firstItem="RGI-Ww-hbT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="K57-4s-8eh"/>
+                    <constraint firstItem="RGI-Ww-hbT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="K57-4s-8eh"/>
                     <constraint firstItem="ZOT-if-DSb" firstAttribute="leading" secondItem="kmF-gd-PBh" secondAttribute="trailing" constant="8" id="bAG-89-T7K"/>
+                    <constraint firstAttribute="trailing" secondItem="ZOT-if-DSb" secondAttribute="trailing" constant="76" id="dkD-QU-55X"/>
                     <constraint firstAttribute="bottom" secondItem="kmF-gd-PBh" secondAttribute="bottom" constant="18" id="kS1-Uf-bZ7"/>
                     <constraint firstItem="YbU-Eo-kc5" firstAttribute="leading" secondItem="kmF-gd-PBh" secondAttribute="trailing" constant="8" id="lkv-WO-nBE"/>
                     <constraint firstItem="kmF-gd-PBh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="nJH-Wq-Ha9"/>
@@ -70,6 +72,7 @@
                         <exclude reference="Jtf-GL-76A"/>
                         <exclude reference="peM-Qf-g9s"/>
                         <exclude reference="y1Z-wc-v23"/>
+                        <exclude reference="ycK-pe-eoD"/>
                         <exclude reference="IlY-xJ-LPg"/>
                     </mask>
                 </variation>
@@ -80,7 +83,7 @@
                 <outlet property="tweetText" destination="ZOT-if-DSb" id="SEx-i6-WCf"/>
                 <outlet property="userImage" destination="kmF-gd-PBh" id="vkB-6J-K7u"/>
             </connections>
-            <point key="canvasLocation" x="857" y="572.5"/>
+            <point key="canvasLocation" x="857" y="568.5"/>
         </tableViewCell>
     </objects>
 </document>

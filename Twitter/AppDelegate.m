@@ -32,8 +32,11 @@
         NSLog(@"Welcome from AppDelegate: %@", user.name);
         UINavigationController *nvc =[[UINavigationController alloc] initWithRootViewController:[[TweetsViewController alloc] init]];
         nvc.navigationBar.translucent=NO;
+//        nvc.navigationBar.tintColor=[UIColor blueColor];
+//        [[UINavigationBar appearance] setTintColor:[UIColor blueColor]];
+//        nvc.navigationBar.backgroundColor=[UIColor blueColor];
         self.window.rootViewController=nvc;
-        //        self.window.backgroundColor = [UIColor whiteColor];
+//        self.window.backgroundColor = [UIColor whiteColor];
         [self.window makeKeyAndVisible];
         
         self.window.rootViewController=nvc;

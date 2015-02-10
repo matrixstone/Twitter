@@ -87,4 +87,16 @@ NSString * const kTwitterBaseUrl=@"https://api.twitter.com/";
     }];
 }
 
+-(void)postTweet:(NSString *)content withUser:(User *)user{
+    NSDictionary *request = @{@"status": content};
+    
+    [self POST:@"/1.1/statuses/update.json" parameters:request constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        NSLog(@"Finish posting");
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Successful posting");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Posting error");
+    }];
+}
+
 @end

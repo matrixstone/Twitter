@@ -33,6 +33,8 @@
     self.screenName.text=[NSString stringWithFormat:@"@%@", tweet.user.screenname];
 //    self.createdAt=tweet.createdAt;
     self.tweetText.text=tweet.text;
+//    self.tweetText.lineBreakMode=NSLineBreakByWordWrapping;
+//    self.tweetText.numberOfLines = 0;
     
     [self.userImage setImageWithURL:[NSURL URLWithString:self.tweet.user.profileImageUrl]];
     
