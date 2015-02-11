@@ -13,26 +13,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Michael" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbU-Eo-kc5">
-                        <rect key="frame" x="72" y="20" width="60" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Michael" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbU-Eo-kc5">
+                        <rect key="frame" x="72" y="20" width="45" height="15"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="MJ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGI-Ww-hbT">
-                        <rect key="frame" x="168" y="20" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text file" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOT-if-DSb">
+                        <rect key="frame" x="72" y="43" width="254" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Text file" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOT-if-DSb">
-                        <rect key="frame" x="72" y="49" width="254" height="22"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmF-gd-PBh">
-                        <rect key="frame" x="14" y="17" width="50" height="50"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kmF-gd-PBh">
+                        <rect key="frame" x="14" y="16" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="R5N-qL-sAb"/>
                             <constraint firstAttribute="width" constant="80" id="WF2-bB-zYT"/>
@@ -46,6 +40,12 @@
                             </mask>
                         </variation>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MJ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGI-Ww-hbT">
+                        <rect key="frame" x="168" y="20" width="18" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="kmF-gd-PBh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="5aY-Dn-DZI"/>
@@ -58,11 +58,12 @@
                     <constraint firstItem="RGI-Ww-hbT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="K57-4s-8eh"/>
                     <constraint firstItem="ZOT-if-DSb" firstAttribute="leading" secondItem="kmF-gd-PBh" secondAttribute="trailing" constant="8" id="bAG-89-T7K"/>
                     <constraint firstAttribute="trailing" secondItem="ZOT-if-DSb" secondAttribute="trailing" constant="76" id="dkD-QU-55X"/>
-                    <constraint firstAttribute="bottom" secondItem="kmF-gd-PBh" secondAttribute="bottom" constant="18" id="kS1-Uf-bZ7"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kmF-gd-PBh" secondAttribute="bottom" constant="18" id="kS1-Uf-bZ7"/>
                     <constraint firstItem="YbU-Eo-kc5" firstAttribute="leading" secondItem="kmF-gd-PBh" secondAttribute="trailing" constant="8" id="lkv-WO-nBE"/>
                     <constraint firstItem="kmF-gd-PBh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="nJH-Wq-Ha9"/>
                     <constraint firstAttribute="bottom" secondItem="kmF-gd-PBh" secondAttribute="bottom" constant="20" id="peM-Qf-g9s"/>
-                    <constraint firstItem="RGI-Ww-hbT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YbU-Eo-kc5" secondAttribute="trailing" constant="10" id="vrh-je-XFh"/>
+                    <constraint firstAttribute="bottom" secondItem="ZOT-if-DSb" secondAttribute="bottom" constant="27.5" id="qjq-0r-CfI"/>
+                    <constraint firstItem="RGI-Ww-hbT" firstAttribute="leading" secondItem="YbU-Eo-kc5" secondAttribute="trailing" constant="51.5" id="uEj-wa-GHB"/>
                     <constraint firstItem="ZOT-if-DSb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="y1Z-wc-v23"/>
                     <constraint firstItem="ZOT-if-DSb" firstAttribute="top" secondItem="YbU-Eo-kc5" secondAttribute="bottom" constant="2" id="ycK-pe-eoD"/>
                 </constraints>
@@ -70,6 +71,7 @@
                     <mask key="constraints">
                         <exclude reference="8TE-lC-gqe"/>
                         <exclude reference="Jtf-GL-76A"/>
+                        <exclude reference="nJH-Wq-Ha9"/>
                         <exclude reference="peM-Qf-g9s"/>
                         <exclude reference="y1Z-wc-v23"/>
                         <exclude reference="ycK-pe-eoD"/>
