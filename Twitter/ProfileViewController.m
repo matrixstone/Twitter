@@ -7,8 +7,15 @@
 //
 
 #import "ProfileViewController.h"
+#import "User.h"
 
 @interface ProfileViewController ()
+@property (nonatomic, strong) User *user;
+
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *screenName;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -22,6 +29,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(ProfileViewController *)initWithUser:(User *)user{
+    ProfileViewController *profile=[[ProfileViewController alloc]init];
+    profile.user=user;
+    return profile;
 }
 
 /*

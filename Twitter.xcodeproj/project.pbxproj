@@ -13,6 +13,8 @@
 		8B3AEBA11A89F9D1006B2770 /* NewTweet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3AEB9F1A89F9D1006B2770 /* NewTweet.xib */; };
 		8B4BF1D41A8897BF00AC58D3 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4BF1D21A8897BF00AC58D3 /* TweetCell.m */; };
 		8B4BF1D51A8897BF00AC58D3 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B4BF1D31A8897BF00AC58D3 /* TweetCell.xib */; };
+		8BB85C991A8B37BF00F15C8B /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB85C971A8B37BF00F15C8B /* ProfileViewController.m */; };
+		8BB85C9A1A8B37BF00F15C8B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB85C981A8B37BF00F15C8B /* ProfileViewController.xib */; };
 		8BBBEEAB1A87311A001D3A84 /* TweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBEEA91A87311A001D3A84 /* TweetsViewController.m */; };
 		8BBBEEAC1A87311A001D3A84 /* TweetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BBBEEAA1A87311A001D3A84 /* TweetsViewController.xib */; };
 		8BC6BE101A81A2FA009C95C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6BE0F1A81A2FA009C95C4 /* main.m */; };
@@ -50,6 +52,9 @@
 		8B4BF1D11A8897BF00AC58D3 /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
 		8B4BF1D21A8897BF00AC58D3 /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
 		8B4BF1D31A8897BF00AC58D3 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
+		8BB85C961A8B37BF00F15C8B /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		8BB85C971A8B37BF00F15C8B /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		8BB85C981A8B37BF00F15C8B /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		8BBBEEA81A87311A001D3A84 /* TweetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsViewController.h; sourceTree = "<group>"; };
 		8BBBEEA91A87311A001D3A84 /* TweetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsViewController.m; sourceTree = "<group>"; };
 		8BBBEEAA1A87311A001D3A84 /* TweetsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetsViewController.xib; sourceTree = "<group>"; };
@@ -123,6 +128,9 @@
 				8B3AEB9D1A89F9D1006B2770 /* NewTweet.h */,
 				8B3AEB9E1A89F9D1006B2770 /* NewTweet.m */,
 				8B3AEB9F1A89F9D1006B2770 /* NewTweet.xib */,
+				8BB85C961A8B37BF00F15C8B /* ProfileViewController.h */,
+				8BB85C971A8B37BF00F15C8B /* ProfileViewController.m */,
+				8BB85C981A8B37BF00F15C8B /* ProfileViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -298,6 +306,7 @@
 			files = (
 				8B3AEB9C1A89D871006B2770 /* DetailedView.xib in Resources */,
 				8B3AEBA11A89F9D1006B2770 /* NewTweet.xib in Resources */,
+				8BB85C9A1A8B37BF00F15C8B /* ProfileViewController.xib in Resources */,
 				8BBBEEAC1A87311A001D3A84 /* TweetsViewController.xib in Resources */,
 				8B4BF1D51A8897BF00AC58D3 /* TweetCell.xib in Resources */,
 				8BC6BE1E1A81A2FA009C95C4 /* LaunchScreen.xib in Resources */,
@@ -361,6 +370,7 @@
 				8BC6BE101A81A2FA009C95C4 /* main.m in Sources */,
 				8BC6BE3B1A81A4FB009C95C4 /* LoginViewController.m in Sources */,
 				8BBBEEAB1A87311A001D3A84 /* TweetsViewController.m in Sources */,
+				8BB85C991A8B37BF00F15C8B /* ProfileViewController.m in Sources */,
 				8B3AEBA01A89F9D1006B2770 /* NewTweet.m in Sources */,
 				8B4BF1D41A8897BF00AC58D3 /* TweetCell.m in Sources */,
 			);

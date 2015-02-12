@@ -13,6 +13,7 @@
 #import "TweetCell.h"
 #import "DetailedView.h"
 #import "NewTweet.h"
+#import "ProfileViewController.h"
 
 @interface TweetsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,7 +26,7 @@
     [super viewDidLoad];
     
     //Setting for navigation bar:
-    self.title=@"Tweets";
+    self.title=@"Home";
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     self.navigationController.navigationBar.barTintColor=[UIColor colorWithRed:0.23 green:0.79 blue:0.93 alpha:1.0];
@@ -86,6 +87,27 @@
     vc.tweet=self.tweets[indexPath.row];
     NSLog(@"Test from didSelectRowAtIndexPath");
     [self.navigationController pushViewController:vc animated:YES];
+}
+- (IBAction)onPan:(UIPanGestureRecognizer *)sender {
+    CGPoint point = [sender locationInView:self.view];
+    CGPoint velocity = [sender velocityInView:self.view];
+    NSLog(@"Test for pan");
+    if (sender.state == UIGestureRecognizerStateBegan) {
+//        NSLog(@"Gesture began at: %@", NSStringFromCGPoint(point));
+    } else if (sender.state == UIGestureRecognizerStateChanged) {
+//        NSLog(@"Gesture changed: %@", NSStringFromCGPoint(point));
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
+        if (velocity.x > 0) {
+//            ProfileViewController *pc= [[ProfileViewController alloc]initWithUser:[User currentUser]];
+//            [self.navigationController pushViewController:pc animated:YES];
+            [UIView animateWithDuration:1 animations:^{
+                self.view.center=CGPointMake(500, self.view.center.y);
+            } completion:^(BOOL finished) {
+                NSLog(@"Success animation");
+            }];
+            
+        }
+    }
 }
 
 //- (IBAction)onLogout:(id)sender {
